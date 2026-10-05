@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional portfolio of Raushan Kumar — BCA student focused on web development, data, databases and modern technology.">
+    <meta name="author" content="Raushan Kumar">
+    <meta name="keywords" content="Raushan Kumar, BCA, Web Development, Data Analytics, Python, SQL, Excel, Portfolio">
+    <meta property="og:title" content="Raushan Kumar | Professional Portfolio">
+    <meta property="og:description"
+        content="BCA Student specializing in Web Development, Data Analysis, and Modern Technologies.">
+    <meta property="og:type" content="website">
+
+    <meta name="system-version" content="2.1.0">
+
+    <title>Raushan Kumar | Professional Portfolio</title>
+
+    <!-- Link to Google Fonts (Outfit & Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Skip to main content link for keyboard accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand" aria-label="Raushan Kumar Portfolio Home">
+                <span class="brand-badge">RK</span>
+                <span class="brand-name">Raushan Kumar</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-links" id="primary-navigation" aria-label="Main Navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch to light theme"
+                    title="Toggle color theme">
+                    <!-- Sun Icon (shown in dark mode) -->
+                    <svg class="theme-icon sun-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon (shown in light mode) -->
+                    <svg class="theme-icon moon-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile Hamburger Menu Button -->
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-controls="primary-navigation"
+                    aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- 7. HERO SECTION -->
+        <section class="hero-section" id="home" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <!-- Left Column: Content -->
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        <span class="badge-text">PORTFOLIO</span>
+                    </div>
+
+                    <h1 class="hero-title" id="hero-title">RAUSHAN KUMAR</h1>
+
+                    <p class="hero-subtitle" id="heroHeadline">
+                        BCA Student <span class="divider-dot" aria-hidden="true">•</span> Data Analysis <span
+                            class="divider-dot" aria-hidden="true">•</span> MS Excel
+                    </p>
+
+                    <p class="hero-intro" id="heroIntro">
+                        Building practical skills in Data Analysis, Excel, Databases, and modern web technologies. Dedicated to creating structured, reliable digital solutions.
+                    </p>
+
+                    <!-- Hero Call to Action Buttons -->
+                    <div class="hero-actions">
+                        <!-- Resume button container handled via JS safe link validation -->
+                        <div id="heroResumeContainer" class="action-btn-wrapper"></div>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Projects</span>
+                            <svg class="btn-arrow" aria-hidden="true" viewBox="0 0 20 20" width="16" height="16"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+
+                    <!-- Hero Highlights Mini-Row -->
+                    <div class="hero-stats-mini">
+                        <div class="mini-stat">
+                            <span class="mini-val">BCA</span>
+                            <span class="mini-lbl">Roorkee Inst. of Tech.</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-val">Focus</span>
+                            <span class="mini-lbl">Data &amp; Technology</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-val">Active</span>
+                            <span class="mini-lbl">4 Featured Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Profile Image Scrollable Showcase -->
+                <div class="hero-image-wrapper">
+                    <div class="profile-card" id="profileCard" aria-label="Profile image showcase">
+                        <!-- Horizontal Scrollable Photo Frame -->
+                        <div class="profile-frame">
+                            <!-- Floating scroll hint chip -->
+                            <div class="photo-scroll-pill" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+                                <span>Scroll / Swipe Photos</span>
+                            </div>
+
+                            <!-- Scroll Viewport Container -->
+                            <div class="profile-scroll-viewport" id="profileScrollViewport" tabindex="0" role="region" aria-label="Profile photo scroll gallery">
+                                <div class="profile-scroll-track" id="profileScrollTrack">
+                                    <div class="profile-slide active" data-slide-index="0">
+                                        <img src="images/profile-1.jpg?v=1791124666" alt="Raushan Kumar - Professional portrait"
+                                            class="profile-scroll-img" id="profileImg0">
+                                        <span class="slide-count-badge">Photo 1 / 3</span>
+                                    </div>
+                                    <div class="profile-slide" data-slide-index="1">
+                                        <img src="images/profile-2.jpg?v=1791124666" alt="Raushan Kumar - Portrait variant"
+                                            class="profile-scroll-img" id="profileImg1">
+                                        <span class="slide-count-badge">Photo 2 / 3</span>
+                                    </div>
+                                    <div class="profile-slide" data-slide-index="2">
+                                        <img src="images/profile-3.jpg?v=1791124666" alt="Raushan Kumar - Tech portrait"
+                                            class="profile-scroll-img" id="profileImg2">
+                                        <span class="slide-count-badge">Photo 3 / 3</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Image Navigation Controls -->
+                            <button type="button" class="profile-nav-btn prev-btn" id="profilePrevBtn"
+                                aria-label="Scroll to previous profile image" title="Previous photo">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <button type="button" class="profile-nav-btn next-btn" id="profileNextBtn"
+                                aria-label="Scroll to next profile image" title="Next photo">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Indicator Dots -->
+                        <div class="profile-dots" role="tablist" aria-label="Profile image selection">
+                            <button type="button" class="dot active" role="tab" aria-selected="true"
+                                aria-label="Photo 1" data-index="0" title="Photo 1"></button>
+                            <button type="button" class="dot" role="tab" aria-selected="false"
+                                aria-label="Photo 2" data-index="1" title="Photo 2"></button>
+                            <button type="button" class="dot" role="tab" aria-selected="false"
+                                aria-label="Photo 3" data-index="2" title="Photo 3"></button>
+                        </div>
+
+                        <!-- Profile Social Quick Connect Badges -->
+                        <div class="profile-social-strip" id="profileSocialStrip" aria-label="Connect directly with Raushan Kumar">
+                            <div class="profile-social-header">
+                                <span class="profile-social-title">Connect</span>
+                            </div>
+                            <div class="profile-social-buttons" id="profileSocialButtonsList">
+                                <!-- Populated dynamically with compact mini chips for Instagram, GFG, Git, YouTube & more -->
+                            </div>
+                        </div>
+
+                        <!-- Card Footer Tag (Editable via Admin Panel) -->
+                        <div class="profile-status-badge">
+                            <span class="status-indicator" aria-hidden="true"></span>
+                            <span id="profileStatusBadgeText">Open to Internship &amp; Project Collaborations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. ABOUT SECTION -->
+        <section class="section about-section" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title" id="about-heading">Practical Developer &amp; Tech Enthusiast</h2>
+                    <p class="section-subtitle">Dedicated to mastering core computing fundamentals, data exploration,
+                        and clean web development.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-bio-card">
+                        <h3 class="bio-title">Hello, I am Raushan Kumar.</h3>
+                        <p class="bio-text">
+                            I am currently pursuing my <strong>Bachelor of Computer Applications (BCA)</strong> at
+                            <strong>Roorkee Institute of Technology, Roorkee</strong>. My academic journey is centered
+                            on acquiring strong technical foundations in programming, relational databases, software
+                            design, and practical data analysis.
+                        </p>
+                        <p class="bio-text">
+                            I believe in learning by doing. Whether building responsive web applications with semantic
+                            HTML, CSS, and modern JavaScript, crafting analytical dashboards in MS Excel, or performing
+                            exploratory data analysis using Python and Matplotlib, I focus on delivering practical,
+                            structured, and reliable digital solutions.
+                        </p>
+                        <p class="bio-text">
+                            I continuously seek opportunities to strengthen my skills through hands-on projects,
+                            industry certifications, and collaborative teamwork.
+                        </p>
+
+                        <!-- Highlights Tags -->
+                        <div class="about-tags">
+                            <span class="pill-tag">BCA Student</span>
+                            <span class="pill-tag">Web Development</span>
+                            <span class="pill-tag">Data Analysis</span>
+                            <span class="pill-tag">Problem Solving</span>
+                            <span class="pill-tag">Continuous Learner</span>
+                        </div>
+                    </div>
+
+                    <!-- Animated Statistics -->
+                    <div class="about-stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="stat-number" data-target="4">04+</div>
+                            <div class="stat-label">Projects Completed</div>
+                            <div class="stat-note">Practical &amp; Academic</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-number" data-target="10">10+</div>
+                            <div class="stat-label">Technologies</div>
+                            <div class="stat-note">Languages, Tools &amp; DBs</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-number" data-target="5">05+</div>
+                            <div class="stat-label">Certificates</div>
+                            <div class="stat-note">Skill Verified Credentials</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.228-8-5.096 0-5.096 8 0 8 5.095 0 7.133-8 12.228-8z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="stat-number" data-infinity="true">∞</div>
+                            <div class="stat-label">Learning</div>
+                            <div class="stat-note">Continuous Development</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. SKILLS & TECH STACK SECTION (COMPACT & MODERN) -->
+        <section class="section skills-section" id="skills" aria-labelledby="skills-heading">
+            <div class="container">
+                <div class="section-header section-header-compact">
+                    <span class="section-tag">Expertise</span>
+                    <h2 class="section-title" id="skills-heading">Skills &amp; Technologies</h2>
+                    <p class="section-subtitle">Core technical stack, programming tools, and practical competencies.</p>
+                </div>
+
+                <!-- Compact Category Filter Tabs -->
+                <div class="skills-filter-pills" id="skillsFilterPills" role="tablist" aria-label="Filter skills by category">
+                    <button type="button" class="skill-tab active" data-skill-cat="all" role="tab" aria-selected="true">All Skills</button>
+                    <button type="button" class="skill-tab" data-skill-cat="Programming" role="tab" aria-selected="false">Programming</button>
+                    <button type="button" class="skill-tab" data-skill-cat="Web Development" role="tab" aria-selected="false">Web Dev</button>
+                    <button type="button" class="skill-tab" data-skill-cat="Data &amp; Analytics" role="tab" aria-selected="false">Data &amp; Excel</button>
+                    <button type="button" class="skill-tab" data-skill-cat="Database" role="tab" aria-selected="false">Databases</button>
+                    <button type="button" class="skill-tab" data-skill-cat="Tools &amp; Workflow" role="tab" aria-selected="false">Tools</button>
+                </div>
+
+                <!-- Compact Skills Grid Container -->
+                <div class="skills-compact-grid" id="skillsGridContainer">
+                    <!-- Populated dynamically via JS from master data -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FEATURED PROJECTS SECTION -->
+        <section class="section projects-section" id="projects" aria-labelledby="projects-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio Work</span>
+                    <h2 class="section-title" id="projects-heading">Featured Projects</h2>
+                    <p class="section-subtitle">Real project implementations showcasing web interfaces, data dashboards,
+                        and software systems.</p>
+                </div>
+
+                <!-- Category Filters (JavaScript Interactive) -->
+                <div class="filter-controls" id="projectFilterControls" role="tablist" aria-label="Filter projects by category">
+                    <button type="button" class="filter-btn active" role="tab" aria-selected="true"
+                        data-filter="all">All Projects</button>
+                    <button type="button" class="filter-btn" role="tab" aria-selected="false"
+                        data-filter="web">Web</button>
+                    <button type="button" class="filter-btn" role="tab" aria-selected="false"
+                        data-filter="data">Data</button>
+                    <button type="button" class="filter-btn" role="tab" aria-selected="false"
+                        data-filter="java">Java</button>
+                    <button type="button" class="filter-btn" role="tab" aria-selected="false"
+                        data-filter="excel">Excel</button>
+                </div>
+
+                <!-- Projects Dynamic Container -->
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project Cards rendered via JS from data array -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. EDUCATION SECTION -->
+        <section class="section education-section" id="education" aria-labelledby="education-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag" id="educationSectionTag">Academic Background</span>
+                    <h2 class="section-title" id="education-heading">Education History</h2>
+                    <p class="section-subtitle" id="educationSectionSubtitle">Formal academic milestones and ongoing university progression.</p>
+                </div>
+
+                <div class="timeline" id="educationTimeline">
+                    <!-- Milestone 1: BCA -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-badge current">Current Academic Progression</span>
+                                <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+                                <p class="timeline-institute">Roorkee Institute of Technology, Roorkee</p>
+                            </div>
+                            <p class="timeline-desc">
+                                Enrolled in undergraduate computer science curriculum focusing on computer programming,
+                                database management systems, data structures, computer networks, and practical software
+                                engineering.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="pill-tag">Computer Applications</span>
+                                <span class="pill-tag">RIT Roorkee</span>
+                                <span class="pill-tag">Degree Program</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2: Class 12 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-badge completed">Higher Secondary</span>
+                                <h3 class="timeline-title">Class 12 (Intermediate)</h3>
+                                <p class="timeline-institute">Bihar</p>
+                            </div>
+                            <p class="timeline-desc">
+                                Completed senior secondary school education in Bihar with core foundational academics.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="pill-tag">Class 12</span>
+                                <span class="pill-tag">Bihar</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3: Class 10 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-badge completed">Secondary School</span>
+                                <h3 class="timeline-title">Class 10 (Matriculation)</h3>
+                                <p class="timeline-institute">Bihar</p>
+                            </div>
+                            <p class="timeline-desc">
+                                Successfully completed secondary school education in Bihar, establishing key
+                                quantitative and logical problem-solving foundations.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="pill-tag">Class 10</span>
+                                <span class="pill-tag">Bihar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. EXPERIENCE / TRAINING SECTION -->
+        <section class="section experience-section" id="experience" aria-labelledby="experience-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Practical Training</span>
+                    <h2 class="section-title" id="experience-heading">Experience &amp; Training</h2>
+                    <p class="section-subtitle">Real hands-on training, industry certifications, and technical
+                        workshops.</p>
+                </div>
+
+                <div class="experience-list">
+                    <div class="experience-card">
+                        <div class="experience-header-row">
+                            <div>
+                                <span class="experience-year">2026</span>
+                                <h3 class="experience-role" id="experienceInternshipRole">Data Visualization Training / Internship</h3>
+                                <p class="experience-focus">Practical Data Exploration, Cleansing &amp; Visual Analytics
+                                </p>
+                            </div>
+                            <span class="experience-status-badge">Completed / Active 2026</span>
+                        </div>
+
+                        <p class="experience-desc">
+                            Focused practical training covering data processing pipelines, dataset inspection,
+                            identifying anomalies and missing records, and transforming raw information into actionable
+                            visual representations.
+                        </p>
+
+                        <div class="experience-skills-block">
+                            <h4 class="sub-label">Skills &amp; Topics Practiced:</h4>
+                            <div class="experience-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Data Cleaning</span>
+                                <span class="tech-tag">Matplotlib</span>
+                                <span class="tech-tag">Data Visualization</span>
+                                <span class="tech-tag">Data Analysis</span>
+                            </div>
+                        </div>
+
+                        <div class="experience-highlights">
+                            <div class="exp-bullet">
+                                <svg class="bullet-icon" aria-hidden="true" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Applied Python scripts and libraries for structured exploratory data analysis
+                                    (EDA).</span>
+                            </div>
+                            <div class="exp-bullet">
+                                <svg class="bullet-icon" aria-hidden="true" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Built clean multi-axis charts, distribution graphs, and correlation heatmaps with
+                                    Matplotlib.</span>
+                            </div>
+                            <div class="exp-bullet">
+                                <svg class="bullet-icon" aria-hidden="true" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Maintained structured documentation and clean modular code standards throughout
+                                    exercises.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16. CERTIFICATIONS SECTION -->
+        <section class="section certificates-section" id="certificates" aria-labelledby="certificates-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Credentials</span>
+                    <h2 class="section-title" id="certificates-heading">Certifications &amp; Courses</h2>
+                    <p class="section-subtitle">Recognized coursework and verification of technical competencies.</p>
+                </div>
+
+                <!-- Certificate Category Filters -->
+                <div class="filter-controls cert-filter-controls" id="certFilterControls" role="tablist" aria-label="Filter certificates by provider">
+                    <button type="button" class="cert-filter-btn active" role="tab" aria-selected="true"
+                        data-cert-filter="all">All</button>
+                    <button type="button" class="cert-filter-btn" role="tab" aria-selected="false"
+                        data-cert-filter="ibm">IBM</button>
+                    <button type="button" class="cert-filter-btn" role="tab" aria-selected="false"
+                        data-cert-filter="microsoft">Microsoft</button>
+                    <button type="button" class="cert-filter-btn" role="tab" aria-selected="false"
+                        data-cert-filter="infosys">Infosys</button>
+                    <button type="button" class="cert-filter-btn" role="tab" aria-selected="false"
+                        data-cert-filter="sql">SQL</button>
+                    <button type="button" class="cert-filter-btn" role="tab" aria-selected="false"
+                        data-cert-filter="other">Other</button>
+                </div>
+
+                <!-- Certificate Grid rendered via JS -->
+                <div class="certificates-grid" id="certificatesGrid">
+                    <!-- Rendered dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 18. LEARNING JOURNEY -->
+        <section class="section journey-section" id="journey" aria-labelledby="journey-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Progression</span>
+                    <h2 class="section-title" id="journey-heading">Learning Journey</h2>
+                    <p class="section-subtitle">A realistic progression timeline showing active growth and future
+                        technical directions.</p>
+                </div>
+
+                <div class="journey-timeline">
+                    <!-- 2025 -->
+                    <div class="journey-card">
+                        <div class="journey-year-pill">2025</div>
+                        <h3 class="journey-step-title">Started BCA / Technology Learning</h3>
+                        <p class="journey-step-desc">
+                            Began undergraduate degree in Computer Applications at Roorkee Institute of Technology.
+                            Mastered computing fundamentals, introductory algorithms, core programming concepts, and
+                            foundational web structure.
+                        </p>
+                        <div class="journey-highlights">
+                            <span class="pill-tag">BCA Admission</span>
+                            <span class="pill-tag">Computer Fundamentals</span>
+                            <span class="pill-tag">Introductory Programming</span>
+                        </div>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="journey-card active-journey">
+                        <div class="journey-year-pill current-pill">2026 • Present Focus</div>
+                        <h3 class="journey-step-title">Web Development, Data &amp; Practical Projects</h3>
+                        <p class="journey-step-desc">
+                            Deepening hands-on technical skills across web development (HTML, CSS, JavaScript), database
+                            concepts with SQL, and practical data analysis using Python, Matplotlib, and MS Excel.
+                            Implementing realistic academic projects.
+                        </p>
+                        <div class="journey-highlights">
+                            <span class="pill-tag">Web Development</span>
+                            <span class="pill-tag">Python &amp; Matplotlib</span>
+                            <span class="pill-tag">SQL &amp; Databases</span>
+                            <span class="pill-tag">Excel Dashboards</span>
+                            <span class="pill-tag">Practical Projects</span>
+                        </div>
+                    </div>
+
+                    <!-- Future -->
+                    <div class="journey-card">
+                        <div class="journey-year-pill future-pill">Future Milestones</div>
+                        <h3 class="journey-step-title">Advanced Development &amp; Modern Technologies</h3>
+                        <p class="journey-step-desc">
+                            Expanding knowledge into full-stack application development, advanced data analytics
+                            workflows, scalable cloud deployments, and industry-grade software engineering practices.
+                        </p>
+                        <div class="journey-highlights">
+                            <span class="pill-tag">Advanced Web Apps</span>
+                            <span class="pill-tag">Data Analytics Specialization</span>
+                            <span class="pill-tag">Modern Tech Stacks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 20. CONTACT SECTION -->
+        <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title" id="contact-heading">LET'S CONNECT</h2>
+                    <p class="section-subtitle" id="contactSectionSubtitle">Have a project, internship opportunity or professional collaboration in mind?</p>
+                </div>
+
+                <!-- Single Unified Message Panel (No visible phone number, Connect for Raushan Kumar) -->
+                <div class="contact-single-container">
+                    <div class="contact-unified-panel">
+                        <div class="contact-card-top-badge">
+                            <span class="pulse-dot"></span>
+                            <span>Direct Messaging</span>
+                        </div>
+                        <h3 class="contact-unified-title">Connect for Raushan Kumar</h3>
+                        <p class="contact-unified-desc">
+                            Have a project, internship opportunity, or professional collaboration in mind? Send your direct message below.
+                        </p>
+
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="form-grid-two">
+                                <div class="form-group">
+                                    <label for="contactName" class="form-label">Full Name <span class="required"
+                                            aria-hidden="true">*</span></label>
+                                    <input type="text" id="contactName" name="name" class="form-input"
+                                        placeholder="e.g. John Doe" required autocomplete="name">
+                                    <span class="form-error" id="nameError">Please enter your name.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactEmail" class="form-label">Email Address <span class="required"
+                                            aria-hidden="true">*</span></label>
+                                    <input type="email" id="contactEmail" name="email" class="form-input"
+                                        placeholder="e.g. name@example.com" required autocomplete="email">
+                                    <span class="form-error" id="emailError">Please enter a valid email address.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactSubject" class="form-label">Subject <span class="required"
+                                        aria-hidden="true">*</span></label>
+                                <input type="text" id="contactSubject" name="subject" class="form-input"
+                                    placeholder="e.g. Internship Opportunity / Project Collaboration" required>
+                                <span class="form-error" id="subjectError">Please provide a subject.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label">Message <span class="required"
+                                        aria-hidden="true">*</span></label>
+                                <textarea id="contactMessage" name="message" rows="4" class="form-textarea"
+                                    placeholder="Describe your message or opportunity here..." required></textarea>
+                                <span class="form-error" id="messageError">Please enter your message.</span>
+                            </div>
+
+                            <!-- WhatsApp Direct Dispatch Notice (No raw number exposed) -->
+                            <div class="form-status-notice" id="formStatusNotice" role="status" aria-live="polite">
+                                <svg class="notice-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.585 1.961.948 3.023.948h.005c3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.767-5.768-5.767zm7.558 5.765c0 4.17-3.393 7.564-7.56 7.564-1.272 0-2.502-.321-3.593-.93l-4.436 1.163 1.183-4.321c-.696-1.144-1.064-2.464-1.064-3.812 0-4.17 3.393-7.564 7.564-7.564 4.167 0 7.56 3.394 7.56 7.564z"/>
+                                </svg>
+                                <span id="formStatusText">Your message connects directly to Raushan Kumar with instant delivery.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit-btn" id="submitFormBtn">
+                                <span>Connect for Raushan Kumar</span>
+                                <svg class="btn-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.585 1.961.948 3.023.948h.005c3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.767-5.768-5.767zm7.558 5.765c0 4.17-3.393 7.564-7.56 7.564-1.272 0-2.502-.321-3.593-.93l-4.436 1.163 1.183-4.321c-.696-1.144-1.064-2.464-1.064-3.812 0-4.17 3.393-7.564 7.564-7.564 4.167 0 7.56 3.394 7.56 7.564z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 21. BEAUTIFUL THANK YOU FOOTER SECTION -->
+    <footer class="site-footer thank-you-footer">
+        <div class="thank-you-container">
+            <div class="thank-you-card">
+                <div class="thank-you-glow-orb" aria-hidden="true"></div>
+                <div class="thank-you-badge">
+                    <span class="thank-you-sparkle" aria-hidden="true">✨</span>
+                    <span>THANK YOU FOR VISITING</span>
+                </div>
+
+                <h3 class="thank-you-title">Thank You For Your Time &amp; Consideration!</h3>
+
+                <p class="thank-you-text" id="thankYouTextDisplay">
+                    Aapka dil se shukriya mere portfolio ko dekhne aur explore karne ke liye. Chahe internship opportunity ho, hands-on project collaboration ya coding discussion — I am always excited to connect and build something impactful!
+                </p>
+
+                <div class="thank-you-actions">
+                    <a href="https://wa.me/919942760034?text=Hello%20Raushan!%20I%20visited%20your%20portfolio%20and%20would%20love%20to%20connect." target="_blank" rel="noopener noreferrer" class="thank-you-btn btn-wa-chat" aria-label="Connect for Raushan Kumar">
+                        <span class="wa-btn-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.585 1.961.948 3.023.948h.005c3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.767-5.768-5.767zm7.558 5.765c0 4.17-3.393 7.564-7.56 7.564-1.272 0-2.502-.321-3.593-.93l-4.436 1.163 1.183-4.321c-.696-1.144-1.064-2.464-1.064-3.812 0-4.17 3.393-7.564 7.564-7.564 4.167 0 7.56 3.394 7.56 7.564z"/>
+                            </svg>
+                        </span>
+                        <span>Connect for Raushan Kumar</span>
+                    </a>
+
+                    <a href="#home" class="thank-you-btn btn-backtop-pill" aria-label="Go back to top">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="12" y1="19" x2="12" y2="5"></line>
+                            <polyline points="5 12 12 5 19 12"></polyline>
+                        </svg>
+                        <span>Back to Top</span>
+                    </a>
+                </div>
+
+                <div class="thank-you-divider"></div>
+
+                <div class="thank-you-meta-row">
+                    <span class="thank-you-signature">Designed &amp; Crafted with <span class="heart-pulse">❤️</span> by <strong>Raushan Kumar</strong></span>
+                    <span class="thank-you-copyright">&copy; 2026 Raushan Kumar • All Rights Reserved</span>
+                    <a href="admin.html" class="thank-you-admin-link" title="Open Admin Panel">Admin Access</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 22. BACK TO TOP BUTTON -->
+    <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top of page"
+        title="Back to Top">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- 13. PROJECT DETAILS MODAL -->
+    <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <div class="modal-badge-wrapper">
+                    <span class="modal-category" id="modalProjectCategory">Web</span>
+                </div>
+                <button type="button" class="modal-close-btn" id="closeProjectModalBtn"
+                    aria-label="Close project details modal">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img src="" alt="" class="modal-img" id="modalProjectImg">
+                </div>
+
+                <h3 class="modal-title" id="modalProjectTitle">Project Title</h3>
+
+                <p class="modal-desc" id="modalProjectDesc">Project detailed description.</p>
+
+                <!-- Features list -->
+                <div class="modal-section-block">
+                    <h4 class="modal-section-title">Key Features &amp; Architecture</h4>
+                    <ul class="modal-feature-list" id="modalProjectFeatures" role="list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <!-- Technologies -->
+                <div class="modal-section-block">
+                    <h4 class="modal-section-title">Technologies Used</h4>
+                    <div class="modal-tags-container" id="modalProjectTech">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Challenges & Learnings Grid -->
+                <div class="modal-two-col">
+                    <div class="modal-col-card">
+                        <h4 class="modal-col-title">Challenges Overcome</h4>
+                        <p class="modal-col-text" id="modalProjectChallenges"></p>
+                    </div>
+                    <div class="modal-col-card">
+                        <h4 class="modal-col-title">Key Learnings</h4>
+                        <p class="modal-col-text" id="modalProjectLearnings"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer" id="modalProjectLinks">
+                <!-- Safe optional links injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 16. CERTIFICATE VIEWER MODAL -->
+    <div class="modal-backdrop" id="certModal" role="dialog" aria-modal="true" aria-labelledby="modalCertTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-cert">
+            <div class="modal-header">
+                <div class="cert-header-info">
+                    <span class="modal-category" id="modalCertOrg">Organization</span>
+                    <h3 class="modal-title cert-modal-heading" id="modalCertTitle">Certificate Title</h3>
+                </div>
+                <button type="button" class="modal-close-btn" id="closeCertModalBtn"
+                    aria-label="Close certificate viewer">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-body cert-modal-body">
+                <div class="cert-full-wrapper">
+                    <img src="" alt="" class="cert-full-img" id="modalCertImg">
+                </div>
+                <div class="cert-meta-bar">
+                    <span class="cert-date" id="modalCertDate">Issued: 2026</span>
+                    <div id="modalCertVerifyWrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Floating Admin Dashboard Trigger Button -->
+    <a href="admin.html" class="admin-floating-btn" id="adminFloatingBtn" aria-label="Open Admin Dashboard" title="Open Admin Panel (Ctrl+Shift+A)">
+        <span class="admin-float-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+        </span>
+        <span class="admin-float-text">Admin Panel</span>
+        <span class="admin-float-pulse" aria-hidden="true"></span>
+    </a>
+
+    <!-- System Live-Update & Auto-Healing Floating Toast -->
+    <div class="system-sync-toast" id="systemSyncToast" role="status" aria-live="polite" style="display:none;">
+        <span class="system-sync-icon" id="systemSyncIcon">✨</span>
+        <div class="system-sync-content">
+            <span class="system-sync-title" id="systemSyncTitle">Content Updated Live</span>
+            <span class="system-sync-desc" id="systemSyncDesc">Changes auto-synced across devices</span>
+        </div>
+    </div>
+
+    <!-- Master Data Code File (Source of Truth) -->
+    <script src="data/portfolio-data.js"></script>
+
+    <!-- Centralized Developer Tech Short-Forms Engine -->
+    <script src="data/tech-helper.js"></script>
+
+    <!-- Link to Main Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

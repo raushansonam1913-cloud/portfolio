@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Panel — Raushan Kumar Portfolio</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+     LOGIN SCREEN (Password Only)
+============================================================ -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <!-- Ultra-Professional Dynamic Circular Admin Avatar System -->
+            <div class="admin-login-avatar-wrap">
+                <div class="admin-login-avatar-ring">
+                    <div class="admin-login-avatar-inner">
+                        <img id="adminLoginAvatarImg" class="admin-login-avatar-img" src="" alt="Admin Profile">
+                    </div>
+                </div>
+            </div>
+            <h1 class="login-title">Portfolio Admin</h1>
+            <p class="login-sub" id="loginSubtitle">Enter Admin Password to continue</p>
+
+            <form id="loginForm" novalidate>
+                <div class="form-row">
+                    <label for="adminPassword" class="form-label">Admin Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="adminPassword" class="form-input" placeholder="raushan sonam"
+                            autocomplete="current-password" autofocus required>
+                        <button type="button" class="reveal-pw-btn" id="revealPwBtn"
+                            aria-label="Toggle password visibility">
+                            <svg id="eyeIconShow" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg id="eyeIconHide" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:none">
+                                <path
+                                    d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94">
+                                </path>
+                                <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="form-error" id="loginError" role="alert">Incorrect password. Please try again.</span>
+                </div>
+                <button type="submit" class="btn btn-primary login-btn">Sign In to Admin</button>
+            </form>
+
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     ADMIN DASHBOARD
+============================================================ -->
+    <div class="admin-layout" id="adminLayout" style="display:none">
+
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <span class="brand-badge-admin">RK</span>
+                <div class="sidebar-brand-text">
+                    <span class="sidebar-title">Admin Panel</span>
+                    <span class="sidebar-sub">Portfolio Manager</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Admin navigation">
+                <button type="button" class="sidebar-link active" data-panel="overview">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Overview</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="photos">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Photos &amp; Profile Pic</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="profile">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile &amp; Bio</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="social">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                    <span>Social &amp; Links</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="projects">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Projects</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="education">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                    <span>Education</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="certificates">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                    <span>Certificates</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="skills">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Skills</span>
+                </button>
+                <button type="button" class="sidebar-link" data-panel="settings">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                    <span>Settings</span>
+                </button>
+                <button type="button" class="sidebar-link sidebar-vault-link" data-panel="vault" id="navLinkVault">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Backend Data Vault</span>
+                    <span class="vault-nav-lock-badge" id="vaultNavLockBadge"
+                        title="Secured with Secondary PIN">🔒</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="sidebar-link sidebar-ext" target="_blank" rel="noopener noreferrer">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span>View Portfolio</span>
+                </a>
+                <button type="button" class="sidebar-link sidebar-logout" id="logoutBtn">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Mobile Sidebar Toggle -->
+        <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle sidebar">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Main Content Area -->
+        <main class="admin-main" id="adminMain">
+
+            <!-- Top Bar -->
+            <div class="admin-topbar">
+                <div class="topbar-left">
+                    <button type="button" class="sidebar-toggle-btn-inline" id="sidebarToggleBtnInline"
+                        aria-label="Toggle sidebar">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="2" aria-hidden="true">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div>
+                        <h1 class="topbar-title" id="topbarTitle">Overview</h1>
+                        <p class="topbar-sub" id="topbarSub">Portfolio management dashboard</p>
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <button type="button" class="btn btn-sm btn-primary" id="publishCodeBtn" style="display:flex; align-items:center; gap:6px; background:linear-gradient(135deg, #10b981 0%, #059669 100%); border:none; box-shadow:0 0 14px rgba(16,185,129,0.3); font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer;" title="Download updated portfolio-data.js file to publish online">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        <span>Publish / Download Code</span>
+                    </button>
+                    <div class="system-pulse-badge" id="topbarSystemStatusBadge" title="Auto-Healing & Live-Sync Active"
+                        style="display:flex; align-items:center; gap:6px; margin-right:12px; padding:4px 10px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); border-radius:999px;">
+                        <span class="system-status-dot"
+                            style="width:7px; height:7px; border-radius:50%; background:#10b981; display:inline-block; box-shadow:0 0 8px #10b981;"></span>
+                        <span style="font-size:0.75rem; font-weight:700; color:#10b981;">Auto-Recovery Active</span>
+                    </div>
+                    <div class="system-pulse-badge" id="topbarCodeSyncBadge" title="Automatic Code Files Disk Sync"
+                        style="display:flex; align-items:center; gap:6px; margin-right:12px; padding:4px 10px; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.25); border-radius:999px;">
+                        <span class="system-status-dot" id="codeSyncDot"
+                            style="width:7px; height:7px; border-radius:50%; background:#3b82f6; display:inline-block; box-shadow:0 0 8px #3b82f6;"></span>
+                        <span id="codeSyncText" style="font-size:0.75rem; font-weight:700; color:#60a5fa;">Code
+                            Auto-Sync Active</span>
+                    </div>
+                    <div class="topbar-status" id="topbarSaveStatus" aria-live="polite">
+                        <span class="status-dot saved" id="saveDot"></span>
+                        <span id="saveStatusText">All changes saved</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toast Notification -->
+            <div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+
+            <!-- ========= PANEL: OVERVIEW ========= -->
+            <div class="admin-panel active" id="panel-overview">
+                <div class="overview-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                </path>
+                            </svg></div>
+                        <div class="kpi-value" id="kpiProjects">4</div>
+                        <div class="kpi-label">Projects</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg></div>
+                        <div class="kpi-value" id="kpiCerts">5</div>
+                        <div class="kpi-label">Certificates</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg></div>
+                        <div class="kpi-value" id="kpiSkills">15+</div>
+                        <div class="kpi-label">Skills</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                            </svg></div>
+                        <div class="kpi-value" id="kpiEducation">3</div>
+                        <div class="kpi-label">Education</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg></div>
+                        <div class="kpi-value" id="kpiLinks">0</div>
+                        <div class="kpi-label">Live Social Links</div>
+                    </div>
+                </div>
+
+                <div class="overview-cards-row">
+                    <div class="admin-card overview-quick">
+                        <h2 class="card-title">Quick Actions</h2>
+                        <div class="quick-actions-grid">
+                            <button type="button" class="quick-btn" data-goto="projects">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Add Project
+                            </button>
+                            <button type="button" class="quick-btn" data-goto="education">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                                Edit Education
+                            </button>
+                            <button type="button" class="quick-btn" data-goto="certificates">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Add Certificate
+                            </button>
+                            <button type="button" class="quick-btn" data-goto="social">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                </svg>
+                                Edit Social Links
+                            </button>
+                            <button type="button" class="quick-btn" data-goto="photos">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                Change Photos
+                            </button>
+                            <button type="button" class="quick-btn" data-goto="profile">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Edit Profile &amp; About
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="admin-card overview-activity">
+                        <h2 class="card-title">Site Configuration Status</h2>
+                        <ul class="status-list" id="configStatusList">
+                            <!-- Populated via JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: PHOTOS ========= -->
+            <div class="admin-panel" id="panel-photos">
+                <div class="admin-card">
+                    <div class="card-header-row">
+                        <div>
+                            <h2 class="card-title">Manage Website Profile Photos</h2>
+                            <p class="card-desc">Upload your photo directly from your laptop or phone. Changes
+                                immediately update your live portfolio.</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-manager-grid">
+                        <!-- PHOTO 1 -->
+                        <div class="photo-manager-card">
+                            <span class="photo-badge-chip">Primary Photo</span>
+                            <h3>Photo 1 (Hero Main)</h3>
+                            <img id="adminPhoto1" class="admin-photo-preview" src="images/profile-1.jpg?v=2"
+                                alt="Website Photo 1">
+                            <input type="file" id="photoInput1" accept="image/*" style="display:none">
+                            <button type="button" class="btn btn-secondary photo-select-btn"
+                                onclick="document.getElementById('photoInput1').click()">
+                                📁 Choose Photo
+                            </button>
+                            <p id="photoName1" class="form-hint">Default: images/profile-1.jpg</p>
+                            <div class="photo-actions-row">
+                                <button type="button" class="btn btn-primary btn-sm" id="btnUpdatePhoto1">Save Photo
+                                    1</button>
+                                <button type="button" class="btn btn-secondary btn-sm"
+                                    id="btnResetPhoto1">Reset</button>
+                            </div>
+                            <p id="photoStatus1" class="photo-status"></p>
+                        </div>
+
+                        <!-- PHOTO 2 -->
+                        <div class="photo-manager-card">
+                            <span class="photo-badge-chip">Carousel Slide 2</span>
+                            <h3>Photo 2 (Variant)</h3>
+                            <img id="adminPhoto2" class="admin-photo-preview" src="images/profile-2.jpg?v=2"
+                                alt="Website Photo 2">
+                            <input type="file" id="photoInput2" accept="image/*" style="display:none">
+                            <button type="button" class="btn btn-secondary photo-select-btn"
+                                onclick="document.getElementById('photoInput2').click()">
+                                📁 Choose Photo
+                            </button>
+                            <p id="photoName2" class="form-hint">Default: images/profile-2.jpg</p>
+                            <div class="photo-actions-row">
+                                <button type="button" class="btn btn-primary btn-sm" id="btnUpdatePhoto2">Save Photo
+                                    2</button>
+                                <button type="button" class="btn btn-secondary btn-sm"
+                                    id="btnResetPhoto2">Reset</button>
+                            </div>
+                            <p id="photoStatus2" class="photo-status"></p>
+                        </div>
+
+                        <!-- PHOTO 3 -->
+                        <div class="photo-manager-card">
+                            <span class="photo-badge-chip">Carousel Slide 3</span>
+                            <h3>Photo 3 (Tech / Casual)</h3>
+                            <img id="adminPhoto3" class="admin-photo-preview" src="images/profile-3.jpg?v=2"
+                                alt="Website Photo 3">
+                            <input type="file" id="photoInput3" accept="image/*" style="display:none">
+                            <button type="button" class="btn btn-secondary photo-select-btn"
+                                onclick="document.getElementById('photoInput3').click()">
+                                📁 Choose Photo
+                            </button>
+                            <p id="photoName3" class="form-hint">Default: images/profile-3.jpg</p>
+                            <div class="photo-actions-row">
+                                <button type="button" class="btn btn-primary btn-sm" id="btnUpdatePhoto3">Save Photo
+                                    3</button>
+                                <button type="button" class="btn btn-secondary btn-sm"
+                                    id="btnResetPhoto3">Reset</button>
+                            </div>
+                            <p id="photoStatus3" class="photo-status"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: PROFILE & BIO ========= -->
+            <div class="admin-panel" id="panel-profile">
+                <div class="admin-card">
+                    <h2 class="card-title">Hero &amp; About Settings</h2>
+                    <p class="card-desc">Manage display name, professional headline, hero intro, and about section
+                        biography.</p>
+
+                    <form id="profileForm" class="admin-form">
+                        <h3 class="form-section-heading">Hero Identity</h3>
+                        <div class="form-row">
+                            <label for="pfName" class="form-label">Full Name</label>
+                            <input type="text" id="pfName" class="form-input" placeholder="e.g. Raushan Kumar">
+                        </div>
+                        <div class="form-row">
+                            <label for="pfHeadline" class="form-label">Professional Headline (Hero Subtitle)</label>
+                            <input type="text" id="pfHeadline" class="form-input"
+                                placeholder="e.g. BCA Student | Web Development | Data & Technology">
+                        </div>
+                        <div class="form-row">
+                            <label for="pfHeroIntro" class="form-label">Hero Introduction (One-liner)</label>
+                            <textarea id="pfHeroIntro" class="form-textarea" rows="2"
+                                placeholder="Short punchy intro under the subtitle..."></textarea>
+                        </div>
+
+                        <h3 class="form-section-heading">About Me Section Content</h3>
+                        <div class="form-row">
+                            <label for="pfAboutGreeting" class="form-label">About Heading / Greeting</label>
+                            <input type="text" id="pfAboutGreeting" class="form-input"
+                                placeholder="e.g. Hello, I am Raushan Kumar.">
+                        </div>
+                        <div class="form-row">
+                            <label for="pfAboutSubtitle" class="form-label">About Section Subtitle / Tagline</label>
+                            <input type="text" id="pfAboutSubtitle" class="form-input"
+                                placeholder="e.g. Practical Developer & Tech Enthusiast">
+                        </div>
+                        <div class="form-row">
+                            <label for="pfBio1" class="form-label">About Bio — Paragraph 1</label>
+                            <textarea id="pfBio1" class="form-textarea" rows="3"
+                                placeholder="Paragraph 1..."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <label for="pfBio2" class="form-label">About Bio — Paragraph 2</label>
+                            <textarea id="pfBio2" class="form-textarea" rows="3"
+                                placeholder="Paragraph 2..."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <label for="pfBio3" class="form-label">About Bio — Paragraph 3</label>
+                            <textarea id="pfBio3" class="form-textarea" rows="3"
+                                placeholder="Paragraph 3..."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <label for="pfAboutTags" class="form-label">Highlight Tags (comma separated)</label>
+                            <input type="text" id="pfAboutTags" class="form-input"
+                                placeholder="BCA Student, Web Development, Data Analysis, Problem Solving, Continuous Learner">
+                        </div>
+
+                        <h3 class="form-section-heading">Animated Stats (About Section)</h3>
+                        <div class="form-grid-two">
+                            <div class="form-row">
+                                <label for="pfStatProjects" class="form-label">Projects Count</label>
+                                <input type="number" id="pfStatProjects" class="form-input" min="0" max="999"
+                                    placeholder="4">
+                            </div>
+                            <div class="form-row">
+                                <label for="pfStatTech" class="form-label">Technologies Count</label>
+                                <input type="number" id="pfStatTech" class="form-input" min="0" max="999"
+                                    placeholder="10">
+                            </div>
+                            <div class="form-row">
+                                <label for="pfStatCerts" class="form-label">Certificates Count</label>
+                                <input type="number" id="pfStatCerts" class="form-input" min="0" max="999"
+                                    placeholder="5">
+                            </div>
+                        </div>
+
+                        <h3 class="form-section-heading">Internship &amp; Opportunity Status Settings</h3>
+                        <div class="form-row">
+                            <label for="pfStatusBadge" class="form-label">Profile Card Status Badge (Hero
+                                Section)</label>
+                            <input type="text" id="pfStatusBadge" class="form-input"
+                                placeholder="e.g. Open to Internship & Project Collaborations">
+                            <span class="form-hint">Shows at the bottom of your profile photo. Change 'Internship' to
+                                full-time, freelance, or anything you like!</span>
+                        </div>
+                        <div class="form-row">
+                            <label for="pfOpportunitySubtitle" class="form-label">Contact Section Subtitle / Opportunity
+                                Text</label>
+                            <input type="text" id="pfOpportunitySubtitle" class="form-input"
+                                placeholder="e.g. Have a project, internship opportunity or professional collaboration in mind?">
+                        </div>
+                        <div class="form-row">
+                            <label for="pfExpInternshipTitle" class="form-label">Experience Section Training / Role
+                                Title</label>
+                            <input type="text" id="pfExpInternshipTitle" class="form-input"
+                                placeholder="e.g. Data Visualization Training / Internship">
+                        </div>
+
+                        <h3 class="form-section-heading">Footer Appreciation &amp; Thank You Note</h3>
+                        <div class="form-row">
+                            <label for="pfThankYouText" class="form-label">Thank You Message (Footer Card)</label>
+                            <textarea id="pfThankYouText" class="form-textarea" rows="4"
+                                placeholder="Aapka dil se shukriya mere portfolio ko dekhne aur explore karne ke liye..."></textarea>
+                            <span class="form-hint">Displayed inside the glassmorphic Thank You section at the bottom of
+                                your portfolio.</span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Profile Settings</button>
+                            <button type="button" class="btn btn-secondary" id="resetProfileBtn">Reset to
+                                Defaults</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: SOCIAL & LINKS ========= -->
+            <div class="admin-panel" id="panel-social">
+                <div class="admin-card">
+                    <h2 class="card-title">Social Links &amp; Profiles</h2>
+                    <p class="card-desc">Only filled links will be displayed on the portfolio. Logos are automatically
+                        styled and detected from URLs.</p>
+
+                    <form id="socialForm" class="admin-form">
+                        <div class="form-row">
+                            <label for="slInstagram" class="form-label">Instagram Profile URL</label>
+                            <input type="url" id="slInstagram" class="form-input"
+                                placeholder="https://www.instagram.com/your-username">
+                            <span class="form-hint">Displayed directly under your profile photo. Direct link to your
+                                Instagram.</span>
+                        </div>
+                        <div class="form-row">
+                            <label for="slGfg" class="form-label">GeeksforGeeks (GFG) Profile URL</label>
+                            <input type="url" id="slGfg" class="form-input"
+                                placeholder="https://www.geeksforgeeks.org/user/your-username/">
+                            <span class="form-hint">Displayed directly under your profile photo. Direct link to your GFG
+                                profile.</span>
+                        </div>
+                        <div class="form-row">
+                            <label for="slGithub" class="form-label">GitHub / Git Profile URL</label>
+                            <input type="url" id="slGithub" class="form-input"
+                                placeholder="https://github.com/your-username">
+                            <span class="form-hint">Displayed under your profile photo and in projects/footer.</span>
+                        </div>
+                        <div class="form-row">
+                            <label for="slYoutube" class="form-label">YouTube Channel URL</label>
+                            <input type="url" id="slYoutube" class="form-input"
+                                placeholder="https://youtube.com/@your-channel">
+                            <span class="form-hint">Official YouTube icon with direct red branding displayed under
+                                profile photo.</span>
+                        </div>
+                        <div class="form-row">
+                            <label for="slLinkedin" class="form-label">LinkedIn Profile URL</label>
+                            <input type="url" id="slLinkedin" class="form-input"
+                                placeholder="https://linkedin.com/in/your-profile">
+                            <span class="form-hint">Leave empty to hide LinkedIn button everywhere.</span>
+                        </div>
+                        <div class="form-row">
+                            <label for="slEmail" class="form-label">Contact Email Address</label>
+                            <input type="email" id="slEmail" class="form-input" placeholder="e.g. yourname@example.com">
+                            <span class="form-hint">Used for the mailto: link in Contact section. Leave empty to show
+                                placeholder text.</span>
+                        </div>
+                        <div class="form-row">
+                            <label for="slResume" class="form-label">Resume File Path (local relative)</label>
+                            <input type="text" id="slResume" class="form-input"
+                                placeholder="resume/Raushan-Kumar-Resume.pdf">
+                            <span class="form-hint">Must be inside the <code>resume/</code> folder. Leave blank to hide
+                                resume button.</span>
+                        </div>
+
+                        <div class="settings-divider" style="margin:24px 0 16px 0;"></div>
+
+                        <div class="card-header-row" style="margin-bottom:12px;">
+                            <div>
+                                <h3 class="form-section-heading" style="margin:0;">Extra Social Media Accounts</h3>
+                                <p class="card-desc" style="margin-top:4px;">Baad me koi bhi naya social media account
+                                    yaha jod sakte hain. Platform aur logo URL se automatically detect ho jayenge!</p>
+                            </div>
+                            <button type="button" class="btn btn-secondary btn-sm" id="btnAddCustomSocial">
+                                ➕ Add Account
+                            </button>
+                        </div>
+
+                        <div id="customSocialContainer" class="custom-social-list"
+                            style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+                            <!-- Dynamically populated rows for custom social links -->
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Links &amp; Profiles</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: PROJECTS ========= -->
+            <div class="admin-panel" id="panel-projects">
+                <div class="admin-card">
+                    <div class="card-header-row">
+                        <div>
+                            <h2 class="card-title">Manage Projects</h2>
+                            <p class="card-desc">Add, edit or remove portfolio projects. Changes apply live on portfolio
+                                reload.</p>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="addProjectBtn">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2.5">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add Project
+                        </button>
+                    </div>
+                    <div id="projectsList" class="items-list">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: EDUCATION ========= -->
+            <div class="admin-panel" id="panel-education">
+                <div class="admin-card">
+                    <div class="card-header-row">
+                        <div>
+                            <h2 class="card-title">Manage Education History</h2>
+                            <p class="card-desc">Add, edit or remove academic milestones, degrees, and school details.
+                                Updates sync live with your portfolio.</p>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="addEducationBtn">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2.5">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add Education Milestone
+                        </button>
+                    </div>
+                    <div id="educationList" class="items-list">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: CERTIFICATES ========= -->
+            <div class="admin-panel" id="panel-certificates">
+                <div class="admin-card">
+                    <div class="card-header-row">
+                        <div>
+                            <h2 class="card-title">Manage Certificates</h2>
+                            <p class="card-desc">Add, update or remove your certificates and credentials.</p>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="addCertBtn">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2.5">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add Certificate
+                        </button>
+                    </div>
+                    <div id="certsList" class="items-list">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: SKILLS ========= -->
+            <div class="admin-panel" id="panel-skills">
+                <div class="admin-card">
+                    <div class="card-header-row"
+                        style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                        <div>
+                            <h2 class="card-title">Manage Skills &amp; Categories</h2>
+                            <p class="card-desc">Category name khud se type karein aur skill entries add/edit karein.
+                            </p>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="btnAddSkillCategory">
+                            ➕ Add New Category
+                        </button>
+                    </div>
+
+                    <div id="skillsEditor">
+                        <!-- Rendered by JS -->
+                    </div>
+
+                    <div class="form-actions" style="margin-top:24px">
+                        <button type="button" class="btn btn-primary" id="saveSkillsBtn">Save All Skills</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: SETTINGS ========= -->
+            <div class="admin-panel" id="panel-settings">
+                <div class="admin-card">
+                    <h2 class="card-title">Admin Settings</h2>
+                    <p class="card-desc">Manage access password and data operations.</p>
+
+                    <form id="changePasswordForm" class="admin-form">
+                        <h3 class="form-section-heading">Change Admin Password</h3>
+                        <div class="form-row">
+                            <label for="currentPw" class="form-label">Current Password</label>
+                            <input type="password" id="currentPw" class="form-input" placeholder="Current password"
+                                autocomplete="current-password">
+                        </div>
+                        <div class="form-row">
+                            <label for="newPw" class="form-label">New Password</label>
+                            <input type="password" id="newPw" class="form-input"
+                                placeholder="New password (min. 6 characters)" autocomplete="new-password">
+                        </div>
+                        <div class="form-row">
+                            <label for="confirmPw" class="form-label">Confirm New Password</label>
+                            <input type="password" id="confirmPw" class="form-input" placeholder="Repeat new password"
+                                autocomplete="new-password">
+                        </div>
+                        <span class="form-error" id="pwChangeError" role="alert"></span>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </div>
+                    </form>
+
+                    <div class="settings-divider"></div>
+
+                    <form id="accountSettingsForm" class="admin-form">
+                        <h3 class="form-section-heading">Account &amp; Mobile OTP Settings</h3>
+                        <p class="card-desc">Configure your login username and linked mobile number for WhatsApp and SMS
+                            OTP password recovery.</p>
+                        <div class="form-row">
+                            <label for="settingUsername" class="form-label">Admin Username / User ID</label>
+                            <input type="text" id="settingUsername" class="form-input" placeholder="e.g. admin">
+                        </div>
+
+                        <div class="form-row">
+                            <label class="form-label">Current Active Recovery Number</label>
+                            <div
+                                style="display:flex; align-items:center; gap:12px; padding:10px 14px; background:var(--bg-tertiary); border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                                <span style="font-size:1.1rem;">📱</span>
+                                <strong id="settingCurrentPhoneDisplay"
+                                    style="color:var(--text-primary); font-size:0.95rem;">+91 9942760034</strong>
+                                <span
+                                    style="margin-left:auto; font-size:0.75rem; color:#25d366; background:rgba(37,211,102,0.12); padding:2px 8px; border-radius:var(--radius-full); font-weight:700;">🔒
+                                    Active &amp; Verified</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="settingPhone" class="form-label">Update Mobile / WhatsApp Number</label>
+                            <input type="tel" id="settingPhone" class="form-input" placeholder="+91 9942760034">
+                            <span class="form-hint">Naya number dalne par admin password verification anivarya
+                                hai.</span>
+                        </div>
+
+                        <div class="form-row" id="phoneVerifyGroup">
+                            <label for="settingPhoneVerifyPw" class="form-label">
+                                Security Verification: Current Admin Password <span class="required"
+                                    aria-hidden="true">*</span>
+                            </label>
+                            <input type="password" id="settingPhoneVerifyPw" class="form-input"
+                                placeholder="Enter current admin password to authorize number change"
+                                autocomplete="current-password">
+                            <span class="form-hint">Recovery number badalne ke liye apna current admin password daal kar
+                                verify karein.</span>
+                            <span class="form-error" id="phoneVerifyError" role="alert"
+                                style="display:none; color:#ef4444; font-size:0.82rem; margin-top:4px;"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save &amp; Verify Account Details</button>
+                        </div>
+                    </form>
+
+                    <div class="settings-divider"></div>
+
+                    <h3 class="form-section-heading">Data Management</h3>
+                    <p class="card-desc">Export all portfolio data as JSON, or import a backup file. Reset all data to
+                        original defaults.</p>
+                    <div class="data-actions-row">
+                        <button type="button" class="btn btn-secondary" id="exportDataBtn">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Export JSON Backup
+                        </button>
+                        <label class="btn btn-secondary" for="importDataInput" style="cursor:pointer">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            Import JSON Backup
+                        </label>
+                        <input type="file" id="importDataInput" accept=".json" style="display:none"
+                            aria-label="Import JSON data backup">
+                        <button type="button" class="btn btn-danger" id="resetAllDataBtn">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 .49-3.8"></path>
+                            </svg>
+                            Reset All Data
+                        </button>
+                    </div>
+
+                    <!-- ========= PUBLISH GUIDE & CODE SYNC PANEL ========= -->
+                    <div class="publish-helper-card" style="margin-top:20px; padding:20px; background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.25); border-radius:12px;">
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                            <span style="font-size:1.3rem;">🚀</span>
+                            <h4 style="margin:0; font-size:1.05rem; color:#10b981;">Website Publish Guide (Live Online Updates)</h4>
+                        </div>
+                        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6; margin-bottom:14px;">
+                            Jab aap Admin Panel me koi change karte hain (jaise photo, naya certificate ya project), toh online publish karte waqt updated code file ki jarurat hoti hai. Niche diye button se <strong>portfolio-data.js</strong> download karein aur use apne folder ke <code>data/</code> me replace karke publish karein!
+                        </p>
+                        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                            <button type="button" class="btn btn-primary" id="downloadJsCodeBtn" style="background:#10b981; border:none; display:inline-flex; align-items:center; gap:6px;">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                <span>Download portfolio-data.js (Publish File)</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="copyJsCodeBtn" style="display:inline-flex; align-items:center; gap:6px;">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                <span>Copy Code to Clipboard</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="settings-divider"></div>
+
+                    <!-- ========= SYSTEM HEALTH & AUTO-RECOVERY ENGINE ========= -->
+                    <div class="system-health-panel" id="systemHealthSection">
+                        <div class="system-health-header">
+                            <div>
+                                <h3 class="form-section-heading"
+                                    style="margin-bottom:4px; display:flex; align-items:center; gap:8px;">
+                                    <span>🛡️ System Health &amp; Auto-Update Engine</span>
+                                    <span class="system-pulse-badge" id="systemStatusBadge"
+                                        style="padding:2px 8px; font-size:0.75rem; background:rgba(16,185,129,0.12); color:#10b981; border:1px solid rgba(16,185,129,0.25); border-radius:999px;">●
+                                        Active &amp; Protected</span>
+                                </h3>
+                                <p class="card-desc">Automatic bug detection, crash protection, and real-time live
+                                    synchronization between Admin and Public Portfolio.</p>
+                            </div>
+                        </div>
+
+                        <div class="system-health-grid"
+                            style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-top:16px;">
+                            <div class="health-kpi-card"
+                                style="display:flex; align-items:center; gap:12px; background:var(--bg-tertiary); border:1px solid var(--border-subtle); border-radius:8px; padding:12px 14px;">
+                                <span style="font-size:1.4rem;">🛡️</span>
+                                <div style="display:flex; flex-direction:column; gap:2px;">
+                                    <span
+                                        style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase; font-weight:600;">Auto-Healing</span>
+                                    <span style="font-size:0.85rem; font-weight:700; color:#10b981;"
+                                        id="autoHealStatusVal">Active (Zero-Crash)</span>
+                                </div>
+                            </div>
+                            <div class="health-kpi-card"
+                                style="display:flex; align-items:center; gap:12px; background:var(--bg-tertiary); border:1px solid var(--border-subtle); border-radius:8px; padding:12px 14px;">
+                                <span style="font-size:1.4rem;">⚡</span>
+                                <div style="display:flex; flex-direction:column; gap:2px;">
+                                    <span
+                                        style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase; font-weight:600;">Live
+                                        Sync</span>
+                                    <span style="font-size:0.85rem; font-weight:700; color:#10b981;"
+                                        id="liveSyncStatusVal">Connected (Cross-Tab)</span>
+                                </div>
+                            </div>
+                            <div class="health-kpi-card"
+                                style="display:flex; align-items:center; gap:12px; background:var(--bg-tertiary); border:1px solid var(--border-subtle); border-radius:8px; padding:12px 14px;">
+                                <span style="font-size:1.4rem;">💾</span>
+                                <div style="display:flex; flex-direction:column; gap:2px;">
+                                    <span
+                                        style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase; font-weight:600;">Storage
+                                        Integrity</span>
+                                    <span style="font-size:0.85rem; font-weight:700; color:#10b981;"
+                                        id="storageIntegrityVal">100% Healthy</span>
+                                </div>
+                            </div>
+                            <div class="health-kpi-card"
+                                style="display:flex; align-items:center; gap:12px; background:var(--bg-tertiary); border:1px solid var(--border-subtle); border-radius:8px; padding:12px 14px;">
+                                <span style="font-size:1.4rem;">🔄</span>
+                                <div style="display:flex; flex-direction:column; gap:2px;">
+                                    <span
+                                        style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase; font-weight:600;">System
+                                        Build</span>
+                                    <span style="font-size:0.85rem; font-weight:700; color:var(--text-primary);"
+                                        id="systemBuildVal">v2.1.0 Stable</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="system-health-actions"
+                            style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;">
+                            <button type="button" class="btn btn-secondary" id="btnRunDiagnostics">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Run Health Diagnostics &amp; Auto-Fix
+                            </button>
+                            <button type="button" class="btn btn-primary" id="btnPushLiveUpdate">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                </svg>
+                                Push Live Update to Public Site
+                            </button>
+                        </div>
+                        <div id="diagnosticsReport" class="diagnostics-report"
+                            style="display:none; margin-top:14px; background:var(--bg-tertiary); border:1px solid var(--border-subtle); border-radius:8px; padding:14px 16px; font-size:0.83rem;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= PANEL: BACKEND DATA VAULT (DOUBLE-LOCKED) ========= -->
+            <div class="admin-panel" id="panel-vault">
+                <!-- 1. LOCKED STATE SCREEN -->
+                <div class="vault-locked-container" id="vaultLockedScreen">
+                    <div class="vault-lock-card">
+                        <!-- Dual Security & Developer Identity Header (Dono Jagah Pe Pic + Lock Pahle Jaisha) -->
+                        <div class="vault-auth-header-duo">
+                            <!-- Circular Developer Profile Picture (Pic at both places) -->
+                            <div class="admin-login-avatar-ring" style="width: 86px; height: 86px; margin: 0;">
+                                <div class="admin-login-avatar-inner">
+                                    <img id="vaultLockAvatarImg" class="admin-login-avatar-img" src="" alt="Developer Profile">
+                                </div>
+                            </div>
+
+                            <!-- Animated Double-Lock Link -->
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 3px; color: #38bdf8;">
+                                <span style="font-size: 1.25rem; filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.7)); animation: pulseLink 2.5s ease-in-out infinite;">⚡</span>
+                                <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 1px; color: #94a3b8; text-transform: uppercase;">Protected</span>
+                            </div>
+
+                            <!-- Original High-Tech Vault Shield Lock (Lock pahle jaisha) -->
+                            <div class="vault-shield-icon-wrap" style="width: 86px; height: 86px; margin: 0;">
+                                <span class="vault-pulse-ring"></span>
+                                <div class="vault-shield-badge" style="width: 76px; height: 76px;">
+                                    <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                        <rect x="3" y="11" width="18" height="11" rx="3" ry="3"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        <circle cx="12" cy="16" r="1.5"></circle>
+                                        <path d="M12 17.5V19"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vault-lock-header">
+                            <span class="vault-badge-secure">Double-Lock Security Layer</span>
+                            <h2 class="vault-lock-title">Developer Backend &amp; Data Vault</h2>
+                            <p class="vault-lock-sub">
+                                Raw JSON database schemas, technology short-code dictionaries, aur developer backend
+                                tools yahan protected hain. Kripya apna Developer Vault PIN enter karein.
+                            </p>
+                        </div>
+
+                        <form id="vaultUnlockForm" class="vault-unlock-form" novalidate>
+                            <div class="form-row">
+                                <label for="vaultPinInput" class="form-label" style="text-align:left;">Developer Vault
+                                    PIN / Master Key</label>
+                                <div class="password-wrap">
+                                    <input type="password" id="vaultPinInput" class="form-input vault-pin-input"
+                                        placeholder="Enter Developer Vault PIN / Master Key" autocomplete="off"
+                                        required>
+                                    <button type="button" class="reveal-pw-btn" id="revealVaultPinBtn"
+                                        aria-label="Toggle PIN visibility">
+                                        <svg id="vaultEyeShow" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                        <svg id="vaultEyeHide" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                            stroke="currentColor" stroke-width="2" style="display:none">
+                                            <path
+                                                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94">
+                                            </path>
+                                            <path
+                                                d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19">
+                                            </path>
+                                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <span class="form-error" id="vaultUnlockError" role="alert"
+                                    style="display:none; text-align:left; color:#f87171; font-size:0.85rem; margin-top:6px;">Incorrect
+                                    Vault PIN. Please enter the valid developer master key.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary vault-unlock-btn"
+                                style="width:100%; margin-top:12px; padding:13px; font-weight:700;">
+                                <span>🔓 Unlock Backend Vault</span>
+                            </button>
+                        </form>
+
+                        <div class="vault-security-hints">
+                            <span class="vault-hint-chip">🔒 Secondary Protected</span>
+                            <span class="vault-hint-chip">⚡ Live-Sync Active</span>
+                            <span class="vault-hint-chip">🛡️ Auto-Lock on Idle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. UNLOCKED STATE CONTAINER -->
+                <div class="vault-unlocked-container" id="vaultUnlockedScreen" style="display:none;">
+                    <!-- Vault Session Bar -->
+                    <div class="vault-session-bar">
+                        <div class="vault-session-info">
+                            <span class="vault-status-dot pulse"></span>
+                            <div>
+                                <strong style="color:#10b981; font-size:0.95rem;">Developer Backend Vault
+                                    Unlocked</strong>
+                                <span style="font-size:0.78rem; color:var(--text-muted); display:block;">Active
+                                    Protected Session • All changes live-synced across tabs</span>
+                            </div>
+                        </div>
+                        <div class="vault-session-actions">
+                            <button type="button" class="btn btn-secondary btn-sm" id="btnLockVaultNow">
+                                🔒 Lock Vault Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Vault Navigation Tabs -->
+                    <div class="vault-nav-tabs">
+                        <button type="button" class="vault-tab-btn active" data-vault-tab="dictionary">
+                            🏷️ Tech Short-Forms Dictionary
+                        </button>
+                        <button type="button" class="vault-tab-btn" data-vault-tab="json-editor">
+                            📁 Raw JSON Database Editor
+                        </button>
+                        <button type="button" class="vault-tab-btn" data-vault-tab="dry-guide">
+                            ⚡ Developer DRY Quick-Start
+                        </button>
+                        <button type="button" class="vault-tab-btn" data-vault-tab="security">
+                            🔐 Vault Security &amp; PIN
+                        </button>
+                    </div>
+
+                    <!-- TAB 1: TECH DICTIONARY -->
+                    <div class="vault-tab-content active" id="vaultTab-dictionary">
+                        <div class="admin-card">
+                            <div class="card-header-row">
+                                <div>
+                                    <h2 class="card-title">Technology Short-Code Registry (DRY Dictionary)</h2>
+                                    <p class="card-desc">Developer ko code dobara na likhna pade — shortcode (jaise
+                                        <code>HTML</code>, <code>CSS</code>, <code>JS</code>, <code>PY</code>,
+                                        <code>SQL</code>) likhte hi full name, icons, colors, aur badges website par
+                                        auto-generate ho jate hain.</p>
+                                </div>
+                                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                    <button type="button" class="btn btn-primary" id="btnOpenAddTechModal">
+                                        ➕ Add Technology Shortcode
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="tech-filter-bar">
+                                <div class="search-input-wrap" style="flex:1;">
+                                    <input type="text" id="techSearchInput" class="form-input"
+                                        placeholder="Search by shortcode, name, or category...">
+                                </div>
+                                <select id="techCategoryFilter" class="form-input" style="max-width:200px;">
+                                    <option value="all">All Categories</option>
+                                    <option value="Frontend">Frontend</option>
+                                    <option value="Backend">Backend</option>
+                                    <option value="Programming">Programming</option>
+                                    <option value="Database">Database</option>
+                                    <option value="Data Analysis">Data Analysis</option>
+                                    <option value="Tools">Tools &amp; DevOps</option>
+                                    <option value="Custom">Custom</option>
+                                </select>
+                            </div>
+
+                            <!-- Tech Cards Grid / Table -->
+                            <div class="tech-registry-grid" id="techRegistryList">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: RAW JSON DATABASE EDITOR -->
+                    <div class="vault-tab-content" id="vaultTab-json-editor" style="display:none;">
+                        <div class="admin-card">
+                            <div class="code-auto-update-banner"
+                                style="background:rgba(59,130,246,0.08); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:12px 16px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <span style="font-size:1.3rem;">⚡</span>
+                                    <div>
+                                        <strong style="color:#60a5fa; font-size:0.88rem;">Auto-Code Update Mode
+                                            Active</strong>
+                                        <span
+                                            style="display:block; font-size:0.78rem; color:var(--text-secondary);">Admin
+                                            Panel me password, photos, projects, ya skills update karte hi code file
+                                            (<code>data/portfolio-data.js</code> aur <code>portfolio-data.json</code>)
+                                            automatically update ho jati hai.</span>
+                                    </div>
+                                </div>
+                                <div id="diskServerStatusChip"
+                                    style="font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:999px; background:rgba(16,185,129,0.15); color:#10b981; border:1px solid rgba(16,185,129,0.3); white-space:nowrap;">
+                                    ● Code Auto-Sync Active
+                                </div>
+                            </div>
+
+                            <div class="card-header-row">
+                                <div>
+                                    <h2 class="card-title">Live Code &amp; JSON Database
+                                        (<code>data/portfolio-data.js</code>)</h2>
+                                    <p class="card-desc">Code file ko direct view aur edit karein. Koi bhi change save
+                                        karte hi public site aur code files dono real-time me update ho jate hain.</p>
+                                </div>
+                                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                                    <button type="button" class="btn btn-secondary btn-sm" id="btnFormatJson">
+                                        ✨ Format &amp; Prettify
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm" id="btnValidateJson">
+                                        ✓ Validate Syntax
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm" id="btnDownloadJson">
+                                        💾 Download JSON File
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm" id="btnDownloadJsCode">
+                                        ⚡ Download portfolio-data.js
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm" id="btnCopyJsCode">
+                                        📋 Copy Executable Code
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="json-editor-wrap">
+                                <textarea id="vaultRawJsonTextarea" class="json-code-editor" rows="22"
+                                    spellcheck="false" placeholder="Loading master database JSON..."></textarea>
+                            </div>
+
+                            <div id="jsonValidationMessage" class="json-val-notice"
+                                style="display:none; margin-top:12px;"></div>
+
+                            <div class="form-actions"
+                                style="margin-top:18px; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+                                <button type="button" class="btn btn-danger btn-sm" id="btnRestoreJsonDefaults">
+                                    ↺ Restore Factory Defaults
+                                </button>
+                                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                                    <button type="button" class="btn btn-secondary btn-sm" id="btnSaveToDiskFileDirect">
+                                        📁 Overwrite Code File (File Picker)
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="btnSaveVaultJson">
+                                        🚀 Save &amp; Push Live Update to Website
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: DRY GUIDE & INTERACTIVE TESTER -->
+                    <div class="vault-tab-content" id="vaultTab-dry-guide" style="display:none;">
+                        <div class="admin-card">
+                            <h2 class="card-title">Developer DRY Guide &amp; Interactive Live Tester</h2>
+                            <p class="card-desc">How to write clean, reusable code without repeating technology
+                                definitions or markup.</p>
+
+                            <div class="guide-tester-box">
+                                <h3 class="form-section-heading">Live Interactive Shortcode Badge Preview</h3>
+                                <p class="form-hint" style="margin-bottom:8px;">Type any comma-separated shortcodes
+                                    below to test instant rendering:</p>
+                                <input type="text" id="interactiveTechInput" class="form-input"
+                                    value="HTML, CSS, JS, PY, SQL, EXCEL, PANDAS, REACT, GIT">
+                                <div class="interactive-preview-box" id="interactiveBadgePreview"
+                                    style="margin-top:12px; padding:16px; background:var(--bg-app); border:1px solid var(--border); border-radius:10px; display:flex; flex-wrap:wrap; gap:8px;">
+                                </div>
+                            </div>
+
+                            <div class="settings-divider"></div>
+
+                            <h3 class="form-section-heading">Developer Code Usage Cheatsheet</h3>
+                            <div class="code-snippet-card"
+                                style="background:#040914; border:1px solid var(--border); border-radius:10px; padding:16px; font-family:monospace; font-size:0.85rem; color:#93c5fd; overflow-x:auto; line-height:1.7;">
+                                <div style="color:var(--text-muted);">// 1. In projects or data files, just write
+                                    shortcodes:</div>
+                                <div style="color:#fcd34d;">{ "technologies": ["HTML", "CSS", "JS", "PY", "SQL"] }</div>
+                                <br>
+                                <div style="color:var(--text-muted);">// 2. In JavaScript, render beautiful badges in 1
+                                    line of code:</div>
+                                <div style="color:#6ee7b7;">const html = TechHelper.renderList(project.technologies);
+                                </div>
+                                <br>
+                                <div style="color:var(--text-muted);">// 3. Resolve metadata anytime for custom logic:
+                                </div>
+                                <div style="color:#6ee7b7;">const info = TechHelper.resolve("JS");</div>
+                                <div style="color:var(--text-muted);">// => { short: "JS", name: "JavaScript", color:
+                                    "#f7df1e", badge: "Core Logic" }</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: VAULT SECURITY SETTINGS -->
+                    <div class="vault-tab-content" id="vaultTab-security" style="display:none;">
+                        <div class="admin-card">
+                            <h2 class="card-title">Backend Vault Security &amp; Access Controls</h2>
+                            <p class="card-desc">Manage secondary authentication PIN and protection timeouts for the
+                                developer backend folder.</p>
+
+                            <form id="vaultChangePinForm" class="admin-form">
+                                <h3 class="form-section-heading">Change Developer Vault Master PIN</h3>
+                                <div class="form-row">
+                                    <label for="currentVaultPin" class="form-label">Current Vault PIN</label>
+                                    <input type="password" id="currentVaultPin" class="form-input"
+                                        placeholder="Current PIN (Default: dev2026)" autocomplete="off">
+                                </div>
+                                <div class="form-row">
+                                    <label for="newVaultPin" class="form-label">New Vault PIN (min. 4
+                                        characters)</label>
+                                    <input type="password" id="newVaultPin" class="form-input"
+                                        placeholder="Enter new vault PIN" autocomplete="off">
+                                </div>
+                                <div class="form-row">
+                                    <label for="confirmVaultPin" class="form-label">Confirm New Vault PIN</label>
+                                    <input type="password" id="confirmVaultPin" class="form-input"
+                                        placeholder="Re-enter new vault PIN" autocomplete="off">
+                                </div>
+                                <span class="form-error" id="vaultPinChangeError" role="alert"
+                                    style="display:none; color:#f87171; font-size:0.85rem;"></span>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Update Developer Vault PIN</button>
+                                    <button type="button" class="btn btn-secondary" id="btnResetVaultPinDefault">Reset
+                                        to Default PIN (dev2026)</button>
+                                </div>
+                            </form>
+
+                            <div class="settings-divider"></div>
+
+                            <h3 class="form-section-heading">Auto-Lock Inactivity Timeout</h3>
+                            <div class="form-row">
+                                <label for="vaultAutoLockSelect" class="form-label">Auto-Lock Timeout</label>
+                                <select id="vaultAutoLockSelect" class="form-input" style="max-width:320px;">
+                                    <option value="300000">5 Minutes (Recommended)</option>
+                                    <option value="60000">1 Minute (High Security)</option>
+                                    <option value="900000">15 Minutes</option>
+                                    <option value="0">Disabled (Lock manually only)</option>
+                                </select>
+                                <span class="form-hint">Vault will automatically re-lock itself if you step away from
+                                    the keyboard.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ============================================================
+     PROJECT EDIT MODAL
+============================================================ -->
+    <div class="modal-backdrop" id="projectEditModal" role="dialog" aria-modal="true" aria-labelledby="projModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title" id="projModalTitle">Add Project</h3>
+                <button type="button" class="modal-close-btn" id="closeProjectEditModal"
+                    aria-label="Close project editor">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="projectEditForm" class="admin-form">
+                    <input type="hidden" id="projEditId">
+                    <div class="form-row">
+                        <label for="projEditTitle" class="form-label">Project Title <span class="req">*</span></label>
+                        <input type="text" id="projEditTitle" class="form-input"
+                            placeholder="e.g. Grand Stay Hotel Website" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditBadge" class="form-label">Badge Label</label>
+                        <input type="text" id="projEditBadge" class="form-input" placeholder="e.g. Web Concept">
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditDesc" class="form-label">Description <span class="req">*</span></label>
+                        <textarea id="projEditDesc" class="form-textarea" rows="3" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label">Project Image (Upload File)</label>
+                        <div class="file-upload-dropzone" id="projUploadDropzone" style="border: 2px dashed rgba(59, 130, 246, 0.4); border-radius: 12px; padding: 18px; text-align: center; background: rgba(59, 130, 246, 0.04); cursor: pointer; transition: all 0.2s ease;">
+                            <input type="file" id="projEditFileInput" accept="image/*" style="display:none">
+                            <div id="projUploadPrompt">
+                                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 6px; color: #3b82f6; display: block;">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <p style="margin: 0 0 4px; font-weight: 600; font-size: 0.95rem; color: #f8fafc;">Project Screenshot / Image Upload Karein</p>
+                                <span style="font-size: 0.8rem; color: #94a3b8;">Click karke file select karein (JPG, PNG, WebP)</span>
+                            </div>
+                            <div id="projFilePreviewWrap" style="display: none; margin-top: 8px;">
+                                <img id="projEditPreviewImg" src="" alt="Project Preview" style="max-height: 160px; max-width: 100%; object-fit: contain; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); margin: 0 auto 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                                <div id="projFileMeta" style="font-size: 0.85rem; color: #10b981; font-weight: 600;"></div>
+                                <button type="button" class="btn btn-sm btn-secondary" id="projChangeFileBtn" style="margin-top: 6px; padding: 4px 12px; font-size: 0.8rem;">Change Image</button>
+                            </div>
+                        </div>
+                        <input type="hidden" id="projEditImage">
+                        <div style="margin-top: 6px;">
+                            <details style="font-size: 0.8rem; color: #94a3b8;">
+                                <summary style="cursor: pointer;">Manual Path / External URL (Optional)</summary>
+                                <input type="text" id="projEditImageManual" class="form-input" style="margin-top: 6px; font-size: 0.85rem;" placeholder="images/projects/my-project.jpg">
+                            </details>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditCategoriesInput" class="form-label">Category / Categories (Type
+                            Custom)</label>
+                        <input type="text" id="projEditCategoriesInput" class="form-input"
+                            placeholder="e.g. Web, Full-Stack, AI, Data, Java, Python (comma separated)">
+                        <span class="form-hint">Apni marzi se koi bhi category khud type karein (multiple categories
+                            comma <code>,</code> se alag karein). Niche suggestions par click karke bhi add kar sakte
+                            hain:</span>
+                        <div class="category-quick-pills" id="projCategoryPills"
+                            style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;"></div>
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditTech" class="form-label">Technologies (comma separated)</label>
+                        <input type="text" id="projEditTech" class="form-input" placeholder="HTML, CSS, JavaScript">
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditFeatures" class="form-label">Key Features (one per line)</label>
+                        <textarea id="projEditFeatures" class="form-textarea" rows="4"
+                            placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditChallenges" class="form-label">Challenges</label>
+                        <textarea id="projEditChallenges" class="form-textarea" rows="2"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditLearnings" class="form-label">Key Learnings</label>
+                        <textarea id="projEditLearnings" class="form-textarea" rows="2"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditGithub" class="form-label">GitHub URL</label>
+                        <input type="url" id="projEditGithub" class="form-input" placeholder="https://github.com/...">
+                        <span class="form-hint">Leave empty to hide GitHub button.</span>
+                    </div>
+                    <div class="form-row">
+                        <label for="projEditDemo" class="form-label">Live Demo URL</label>
+                        <input type="url" id="projEditDemo" class="form-input" placeholder="https://...">
+                        <span class="form-hint">Leave empty to hide Live Demo button.</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelProjectEdit">Cancel</button>
+                <button type="button" class="btn btn-primary" id="saveProjectEdit">Save Project</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     CERTIFICATE EDIT MODAL
+============================================================ -->
+    <div class="modal-backdrop" id="certEditModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title" id="certModalTitle">Add Certificate</h3>
+                <button type="button" class="modal-close-btn" id="closeCertEditModal"
+                    aria-label="Close certificate editor">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="certEditForm" class="admin-form">
+                    <input type="hidden" id="certEditId">
+                    <div class="form-row">
+                        <label for="certEditTitle" class="form-label">Certificate Title <span
+                                class="req">*</span></label>
+                        <input type="text" id="certEditTitle" class="form-input" required
+                            placeholder="e.g. IBM Data Science & Python">
+                    </div>
+                    <div class="form-row">
+                        <label for="certEditOrg" class="form-label">Organization / Issuer <span
+                                class="req">*</span></label>
+                        <input type="text" id="certEditOrg" class="form-input" required
+                            placeholder="e.g. IBM Developer Skills Network">
+                    </div>
+                    <div class="form-row">
+                        <label for="certEditCategory" class="form-label">Category (Type Custom)</label>
+                        <input type="text" id="certEditCategory" class="form-input" list="certCategoryDatalist"
+                            placeholder="e.g. IBM, Microsoft, Infosys, SQL, Python, Google, Web Development...">
+                        <datalist id="certCategoryDatalist">
+                            <option value="IBM">
+                            <option value="Microsoft">
+                            <option value="Infosys">
+                            <option value="SQL">
+                            <option value="Google">
+                            <option value="Python">
+                            <option value="Web Development">
+                            <option value="Data Science">
+                            <option value="AI / ML">
+                            <option value="Full-Stack">
+                            <option value="Other">
+                        </datalist>
+                        <span class="form-hint">Apni marzi se koi bhi category khud type karein ya list se select
+                            karein.</span>
+                    </div>
+                    <div class="form-row">
+                        <label for="certEditDate" class="form-label">Date (Year or Full Date)</label>
+                        <input type="text" id="certEditDate" class="form-input" placeholder="e.g. 2026 or January 2026">
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label">Upload Certificate (Image or PDF) <span class="req">*</span></label>
+                        <div class="file-upload-dropzone" id="certUploadDropzone" style="border: 2px dashed rgba(59, 130, 246, 0.4); border-radius: 12px; padding: 20px; text-align: center; background: rgba(59, 130, 246, 0.04); cursor: pointer; transition: all 0.2s ease;">
+                            <input type="file" id="certEditFileInput" accept="image/*,application/pdf" style="display:none">
+                            <div id="certUploadPrompt">
+                                <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 8px; color: #3b82f6; display: block;">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p style="margin: 0 0 4px; font-weight: 600; font-size: 0.95rem; color: #f8fafc;">Certificate File Upload Karein</p>
+                                <span style="font-size: 0.8rem; color: #94a3b8;">Path type karne ki jarurat nahi hai — click karke file upload karein (JPG, PNG, PDF)</span>
+                            </div>
+                            <div id="certFilePreviewWrap" style="display: none; margin-top: 8px;">
+                                <img id="certEditPreviewImg" src="" alt="Certificate Preview" style="max-height: 180px; max-width: 100%; object-fit: contain; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); margin: 0 auto 10px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                                <div id="certFileMeta" style="font-size: 0.85rem; color: #10b981; font-weight: 600;"></div>
+                                <button type="button" class="btn btn-sm btn-secondary" id="certChangeFileBtn" style="margin-top: 8px; padding: 4px 12px; font-size: 0.8rem;">Change File</button>
+                            </div>
+                        </div>
+                        <input type="hidden" id="certEditImage">
+                        <div style="margin-top: 8px;">
+                            <details style="font-size: 0.8rem; color: #94a3b8;">
+                                <summary style="cursor: pointer;">Manual Path / External URL (Optional)</summary>
+                                <input type="text" id="certEditImageManual" class="form-input" style="margin-top: 6px; font-size: 0.85rem;" placeholder="certificates/my-cert.jpg">
+                            </details>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="certEditVerify" class="form-label">Verification URL</label>
+                        <input type="url" id="certEditVerify" class="form-input"
+                            placeholder="https://verify.organization.com/...">
+                        <span class="form-hint">Leave empty to hide the Verify button. Only add real URLs.</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelCertEdit">Cancel</button>
+                <button type="button" class="btn btn-primary" id="saveCertEdit">Save Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     EDUCATION EDIT MODAL
+============================================================ -->
+    <div class="modal-backdrop" id="educationEditModal" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title" id="eduModalTitle">Add Education Milestone</h3>
+                <button type="button" class="modal-close-btn" id="closeEducationEditModal"
+                    aria-label="Close education editor">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="educationEditForm" class="admin-form">
+                    <input type="hidden" id="eduEditId">
+                    <div class="form-row">
+                        <label for="eduEditTitle" class="form-label">Degree / Qualification Title <span
+                                class="req">*</span></label>
+                        <input type="text" id="eduEditTitle" class="form-input" required
+                            placeholder="e.g. Bachelor of Computer Applications (BCA)">
+                    </div>
+                    <div class="form-row">
+                        <label for="eduEditInstitute" class="form-label">Institute / School / Board <span
+                                class="req">*</span></label>
+                        <input type="text" id="eduEditInstitute" class="form-input" required
+                            placeholder="e.g. Roorkee Institute of Technology, Roorkee or BSEB, Bihar">
+                    </div>
+                    <div class="form-row">
+                        <label for="eduEditBadge" class="form-label">Badge Text</label>
+                        <input type="text" id="eduEditBadge" class="form-input"
+                            placeholder="e.g. Current Academic Progression, Higher Secondary, Secondary School">
+                        <span class="form-hint">Badge text shown above the degree title.</span>
+                    </div>
+                    <div class="form-row">
+                        <label for="eduEditBadgeType" class="form-label">Status Style</label>
+                        <select id="eduEditBadgeType" class="form-input">
+                            <option value="current">Current / Ongoing (Blue Highlight)</option>
+                            <option value="completed">Completed (Green Badge)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="eduEditDesc" class="form-label">Description &amp; Highlights</label>
+                        <textarea id="eduEditDesc" class="form-textarea" rows="3"
+                            placeholder="Curriculum details, foundational subjects, key learnings..."></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label for="eduEditTags" class="form-label">Tags / Specializations (comma separated)</label>
+                        <input type="text" id="eduEditTags" class="form-input"
+                            placeholder="e.g. Computer Applications, RIT Roorkee, Degree Program">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelEducationEdit">Cancel</button>
+                <button type="button" class="btn btn-primary" id="saveEducationEdit">Save Education</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div class="modal-backdrop" id="confirmDeleteModal" role="dialog" aria-modal="true"
+        aria-labelledby="confirmDeleteTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-sm">
+            <div class="modal-header">
+                <h3 class="modal-title" id="confirmDeleteTitle">Confirm Delete</h3>
+                <button type="button" class="modal-close-btn" id="closeConfirmDelete" aria-label="Close">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmDeleteText" style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     TECHNOLOGY SHORTCODE EDIT MODAL
+    ============================================================ -->
+    <div class="modal-backdrop" id="techEditModal" role="dialog" aria-modal="true" aria-labelledby="techModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title" id="techModalTitle">Add Technology Shortcode</h3>
+                <button type="button" class="modal-close-btn" id="closeTechEditModal"
+                    aria-label="Close technology editor">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="techEditForm" class="admin-form">
+                    <input type="hidden" id="techEditOriginalCode">
+                    <div class="form-row">
+                        <label for="techEditShort" class="form-label">Shortcode / Abbreviation <span
+                                class="req">*</span></label>
+                        <input type="text" id="techEditShort" class="form-input"
+                            placeholder="e.g. JS, PY, SQL, REACT, DOCKER"
+                            style="text-transform:uppercase; font-weight:700; letter-spacing:1px;" required>
+                        <span class="form-hint">Developer project data me ye shortcode likhega.</span>
+                    </div>
+                    <div class="form-row">
+                        <label for="techEditName" class="form-label">Display Name <span class="req">*</span></label>
+                        <input type="text" id="techEditName" class="form-input"
+                            placeholder="e.g. JavaScript, Python, React.js" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="techEditFullName" class="form-label">Full Name &amp; Specialization</label>
+                        <input type="text" id="techEditFullName" class="form-input"
+                            placeholder="e.g. JavaScript (ES6+ Modern)">
+                    </div>
+                    <div class="form-row">
+                        <label for="techEditCategory" class="form-label">Category</label>
+                        <input type="text" id="techEditCategory" class="form-input" list="techCatSuggestions"
+                            placeholder="e.g. Frontend, Backend, Programming, Database, Data Analysis, Tools">
+                        <datalist id="techCatSuggestions">
+                            <option value="Frontend">
+                            <option value="Backend">
+                            <option value="Programming">
+                            <option value="Database">
+                            <option value="Data Analysis">
+                            <option value="Tools">
+                            <option value="DevOps">
+                        </datalist>
+                    </div>
+                    <div class="form-row">
+                        <label for="techEditBadge" class="form-label">Badge Label (Sub-tag)</label>
+                        <input type="text" id="techEditBadge" class="form-input"
+                            placeholder="e.g. Core Logic, Scripting, Relational DB">
+                    </div>
+                    <div class="form-grid-two">
+                        <div class="form-row">
+                            <label for="techEditColor" class="form-label">Brand Color Accent</label>
+                            <input type="color" id="techEditColor" class="form-input" value="#38bdf8"
+                                style="height:44px; padding:4px; cursor:pointer;">
+                        </div>
+                        <div class="form-row">
+                            <label for="techEditIcon" class="form-label">Icon Shape</label>
+                            <select id="techEditIcon" class="form-input">
+                                <option value="zap">⚡ Zap / Lightning (JS / Logic)</option>
+                                <option value="code">⌨️ Code Brackets (HTML / Web)</option>
+                                <option value="brush">🎨 Brush (CSS / Styling)</option>
+                                <option value="terminal">💻 Terminal (Python / Shell)</option>
+                                <option value="database">🗄️ Database (SQL / Relational)</option>
+                                <option value="table">📊 Table (Excel / Data)</option>
+                                <option value="layers">📑 Layers (DataFrames / Libs)</option>
+                                <option value="cpu">🧠 CPU / Chip (Java / OOP / C++)</option>
+                                <option value="server">🖥️ Server (Node / Backend)</option>
+                                <option value="atom">⚛️ Atom (React / Framework)</option>
+                                <option value="globe">🌐 Globe (API / Networking)</option>
+                                <option value="box">📦 Box (Docker / Tools)</option>
+                                <option value="default">🔹 Default Circle</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="techEditDesc" class="form-label">Description / Hover Tooltip</label>
+                        <textarea id="techEditDesc" class="form-textarea" rows="2"
+                            placeholder="Brief technical summary..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelTechEdit">Cancel</button>
+                <button type="button" class="btn btn-primary" id="saveTechEdit">Save Technology</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="data/portfolio-data.js"></script>
+    <script src="data/tech-helper.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

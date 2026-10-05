@@ -1,0 +1,189 @@
+{
+  "HTML": {
+    "short": "HTML",
+    "name": "HTML5",
+    "fullName": "HyperText Markup Language 5",
+    "category": "Frontend",
+    "badge": "Markup",
+    "icon": "code",
+    "color": "#e34f26",
+    "bg": "rgba(227, 79, 38, 0.12)",
+    "desc": "Semantic HTML5 markup & accessible web structures"
+  },
+  "CSS": {
+    "short": "CSS",
+    "name": "CSS3",
+    "fullName": "Cascading Style Sheets 3",
+    "category": "Frontend",
+    "badge": "Styling",
+    "icon": "brush",
+    "color": "#1572b6",
+    "bg": "rgba(21, 114, 182, 0.12)",
+    "desc": "Responsive design, Flexbox, CSS Grid & animations"
+  },
+  "JS": {
+    "short": "JS",
+    "name": "JavaScript",
+    "fullName": "JavaScript (ES6+ Modern)",
+    "category": "Programming",
+    "badge": "Core Logic",
+    "icon": "zap",
+    "color": "#f7df1e",
+    "bg": "rgba(247, 223, 30, 0.12)",
+    "desc": "Dynamic DOM scripting, modern asynchronous JavaScript"
+  },
+  "TS": {
+    "short": "TS",
+    "name": "TypeScript",
+    "fullName": "TypeScript Typed JavaScript",
+    "category": "Programming",
+    "badge": "Typed JS",
+    "icon": "code",
+    "color": "#3178c6",
+    "bg": "rgba(49, 120, 198, 0.12)",
+    "desc": "Type-safe robust JavaScript application development"
+  },
+  "PY": {
+    "short": "PY",
+    "name": "Python",
+    "fullName": "Python Programming",
+    "category": "Programming",
+    "badge": "Data & AI",
+    "icon": "terminal",
+    "color": "#3776ab",
+    "bg": "rgba(55, 118, 171, 0.12)",
+    "desc": "General scripting, data analysis, automation & backend"
+  },
+  "JAVA": {
+    "short": "JAVA",
+    "name": "Java",
+    "fullName": "Java Core & OOP",
+    "category": "Programming",
+    "badge": "OOP Logic",
+    "icon": "cpu",
+    "color": "#f89820",
+    "bg": "rgba(248, 152, 32, 0.12)",
+    "desc": "Object-oriented programming, classes, JVM architecture"
+  },
+  "SQL": {
+    "short": "SQL",
+    "name": "SQL",
+    "fullName": "Structured Query Language",
+    "category": "Database",
+    "badge": "Relational DB",
+    "icon": "database",
+    "color": "#00758f",
+    "bg": "rgba(0, 117, 143, 0.12)",
+    "desc": "Relational schema design, complex joins, subqueries, ACID"
+  },
+  "EXCEL": {
+    "short": "EXCEL",
+    "name": "MS Excel",
+    "fullName": "Microsoft Excel Analytics",
+    "category": "Data Analysis",
+    "badge": "Spreadsheets",
+    "icon": "table",
+    "color": "#107c41",
+    "bg": "rgba(16, 124, 65, 0.12)",
+    "desc": "Advanced formula modeling (XLOOKUP, SUMIFS), Pivot Tables"
+  },
+  "PANDAS": {
+    "short": "PANDAS",
+    "name": "Pandas",
+    "fullName": "Python Pandas DataFrames",
+    "category": "Data Analysis",
+    "badge": "DataFrames",
+    "icon": "layers",
+    "color": "#150458",
+    "bg": "rgba(21, 4, 88, 0.15)",
+    "desc": "Data cleaning, aggregation, exploratory data analysis"
+  },
+  "MATPLOTLIB": {
+    "short": "MATPLOTLIB",
+    "name": "Matplotlib",
+    "fullName": "Matplotlib Data Visualization",
+    "category": "Data Analysis",
+    "badge": "Visuals",
+    "icon": "layers",
+    "color": "#11557c",
+    "bg": "rgba(17, 85, 124, 0.12)",
+    "desc": "Data distribution charts, correlation heatmaps, trends"
+  },
+  "DATA": {
+    "short": "DATA",
+    "name": "Data Analysis",
+    "fullName": "Exploratory Data Analysis (EDA)",
+    "category": "Data Analysis",
+    "badge": "Analytics",
+    "icon": "table",
+    "color": "#06b6d4",
+    "bg": "rgba(6, 182, 212, 0.12)",
+    "desc": "Dataset inspection, hypothesis verification, KPI metrics"
+  },
+  "REACT": {
+    "short": "REACT",
+    "name": "React.js",
+    "fullName": "React Component UI",
+    "category": "Frontend",
+    "badge": "UI Library",
+    "icon": "atom",
+    "color": "#61dafb",
+    "bg": "rgba(97, 218, 251, 0.12)",
+    "desc": "Declarative component-driven interfaces, modern hooks"
+  },
+  "NODE": {
+    "short": "NODE",
+    "name": "Node.js",
+    "fullName": "Node.js JavaScript Runtime",
+    "category": "Backend",
+    "badge": "Server",
+    "icon": "server",
+    "color": "#339933",
+    "bg": "rgba(51, 153, 51, 0.12)",
+    "desc": "Server-side asynchronous JavaScript runtime"
+  },
+  "GIT": {
+    "short": "GIT",
+    "name": "Git & GitHub",
+    "fullName": "Git Version Control",
+    "category": "Tools",
+    "badge": "VCS",
+    "icon": "terminal",
+    "color": "#f05032",
+    "bg": "rgba(240, 80, 50, 0.12)",
+    "desc": "Commit tracking, branch collaboration, GitHub repos"
+  },
+  "MYSQL": {
+    "short": "MYSQL",
+    "name": "MySQL",
+    "fullName": "MySQL Database",
+    "category": "Database",
+    "badge": "RDBMS",
+    "icon": "database",
+    "color": "#4479a1",
+    "bg": "rgba(68, 121, 161, 0.12)",
+    "desc": "Relational database management, SQL stored procedures"
+  },
+  "API": {
+    "short": "API",
+    "name": "REST API",
+    "fullName": "RESTful Web Services",
+    "category": "Backend",
+    "badge": "APIs",
+    "icon": "globe",
+    "color": "#0ea5e9",
+    "bg": "rgba(14, 165, 233, 0.12)",
+    "desc": "HTTP requests, endpoints, JSON data exchange"
+  },
+  "DOCKER": {
+    "short": "DOCKER",
+    "name": "Docker",
+    "fullName": "Docker Containerization",
+    "category": "DevOps",
+    "badge": "Containers",
+    "icon": "box",
+    "color": "#2496ed",
+    "bg": "rgba(36, 150, 237, 0.12)",
+    "desc": "Isolated containers, reproducible app environments"
+  }
+}
